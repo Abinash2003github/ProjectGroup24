@@ -38,10 +38,11 @@ const userSchema = new mongoose.Schema(
     },
     village: {
         type: String,
+        default: "Unknown",
     },
     state:{
         type: String,
-        lowercase: true,
+        default: "Unknown",
     }
   },
   { timestamps: true }
