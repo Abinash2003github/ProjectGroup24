@@ -14,8 +14,3 @@ connectDB().then(() => {
 }).catch((err) => {
     console.error("MongoDB Connection fail:", err);
 })
-
-
-//add demo user
-import { addUser } from "./controllers/createUser.controller.js";
-addUser();

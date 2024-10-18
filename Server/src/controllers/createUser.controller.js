@@ -5,8 +5,8 @@ import { User } from "../models/user.model.js"
 
 //adding demo user
 
-const addUser = async () => {
-    const demoUser = new User({
+const createUser = async () => {
+    const userData = new User({
         username: 'john_doe',
         email: 'john.doe@example.com',
         password: 'securepassword123', // Make sure to hash passwords in production
@@ -19,15 +19,14 @@ const addUser = async () => {
     });
 
     // Save the demo user to the database
-    await demoUser.save()
+    await userData.save()
         .then(() => {
             console.log('Demo user saved successfully!');
-            mongoose.connection.close(); // Close the connection after saving
+            mongoose.connection.close(); //Close the connection after saving
         })
         .catch((error) => {
             console.error('Error saving demo user:', error);
         });
-
 }
 
-export { addUser };
+export { createUser };
