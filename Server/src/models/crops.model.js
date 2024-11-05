@@ -12,23 +12,23 @@ const cropsSchema = new mongoose.Schema({
     required: true,
   },
   N: {
-    type: Number,
+    type: [Number],
     required: true,
   },
   P: {
-    type: Number,
+    type: [Number],
     required: true,
   },
   K: {
-    type: Number,
+    type: [Number],
     required: true,
   },
   moisture: {
-    type: Number,
+    type: [Number],
     required: true,
   },
   PH: {
-    type: Number,
+    type: [Number],
     required: true,
     enum: [1, 2, 3, 4, 5, 6, 7],
   },

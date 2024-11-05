@@ -2,7 +2,7 @@ import { User } from "../models/user.model.js";
 import asyncHandler from "../utils/asyncHandler.js";
 import ApiError from "../utils/ApiError.js";
 import ApiResponse from "../utils/ApiResponse.js";
-
+import jwt from "jsonwebtoken";
 const generateAccessAndRefreshToken = async (UserId) => {
   try {
     //find user
@@ -26,51 +26,42 @@ const generateAccessAndRefreshToken = async (UserId) => {
   }
 };
 
-const logInUser = asyncHandler(async (req, res) => {
-  const { username, email, password } = req.body;
+const refreshAccessToken = asyncHandler(async (req, res) => {
+  const incomingRefreshToken =
+    req.cookies.refreshToken || req.body.refreshToken;
 
-  //check for empty field
-  if (!(username || email))
-    throw new ApiError(400, "username or password required!");
+  const decodedRefreshToken = jwt.verify(
+    incomingRefreshToken,
+    process.env.REFRESH_TOKEN_SECRET
+  );
 
-  //check if user exist
-  const user = await User.findOne({ $or: [{ username }, { email }] });
-  if (!user) throw new ApiError(404, "User does not exist.");
+  const user = await User.findById(decodedRefreshToken?._id);
+  if (!user) {
+    throw new ApiError(401, "Invalid access token");
+  }
 
-  //check password
-  const isPasswordValid = await user.isPasswordCorrect(password);
-  if (!isPasswordValid) {
-    throw new ApiError(401, "Incorrect Password");
+  if (incomingRefreshToken != user.refreshToken) {
+    throw new ApiError(401, "Refresh token is expired or used!");
   }
 
   const { accessToken, refreshToken } = await generateAccessAndRefreshToken(
     user._id
   );
 
-  const loggedInUser = await User.findById(user._id).select(
-    "-password -refreshToken"
-  );
-
   const options = {
     httpOnly: true,
-    secure: true,
+    seecure: true,
   };
 
-  return res
-    .status(200)
-    .cookie("accessToken", accessToken, options)
-    .cookie("refreshToken", refreshToken, options)
+  res
+    .status(201)
+    .cookies("accessToken", accessToken, options)
+    .cookies("refreshToken", refreshToken, options)
     .json(
       new ApiResponse(
-        200,
-        {
-          user: logInUser,
-          accessToken,
-          refreshToken,
-        },
-        "User loggedin successful"
+        201,
+        { accessToken, refreshToken },
+        "Access token refreshed."
       )
     );
 });
-
-export { logInUser };
