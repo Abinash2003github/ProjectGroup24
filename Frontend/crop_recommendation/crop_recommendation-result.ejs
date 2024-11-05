@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" font>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop Recommendation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-color-form: #ffffff;
+        --bg-color: #effad6;
+        --btn-color: #1facdf;
+        --btn-color-hover: #53ccf7;
+      }
+
+      html {
+        font-size: 16px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        font-family: Arial, sans-serif; /* Replace with your preferred font */
+        color: #333;
+        outline: none;
+        scroll-behavior: smooth;
+        font: inherit;
+        color: inherit;
+      }
+
+      body {
+        height: 100vh;
+        background-color: var(--bg-color);
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        height: 100%;
+      }
+      aside {
+      }
+      section {
+        padding: 2rem;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+        height: 100%;
+      }
+      p {
+        line-height: 1.4rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <aside></aside>
+      <section>
+        <h3
+          style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.75rem"
+        >
+          Recommended Crops Based on Soil & Environmental Factors:
+        </h3>
+        <p>
+          Based on the soil and environmental parameters you've provided, <%= crop %>
+          is a highly suitable crop to grow in these conditions. With optimal
+          nitrogen (N), phosphorus (P), and potassium (K) levels, and a growing
+          period of approximately <%=growing_period %> days, Rice is likely to yield
+          well. Ensure adequate irrigation as per the recommended moisture
+          levels.
+        </p>
+        <p style="text-indent: 3rem">
+          Alternatively, you could also consider crops like Wheat, Maize, or
+          Soybeans, which could perform reasonably well with minor adjustments
+          to moisture or pH conditions. These options provide flexibility based
+          on market demands or resource availability.
+        </p>
+        <br><br><hr>
+      </section>
+      <aside></aside>
+    </div>
+  </body>
+</html>
