@@ -1,6 +1,10 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "prettier": {
+    "printWidth": 100,
+    "bracketSpacing": true
+  },
   "description": "Group 24 Project Backend Part",
   "main": "index.js",
   "type": "module",

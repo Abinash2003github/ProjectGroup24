@@ -11,6 +11,7 @@ import { createUser } from "../controllers/createUser.controller.js";
 import { logInUser } from "../controllers/logInUser.controller.js";
 import { logOutUser } from "../controllers/logOutUser.controller.js";
 import { verifyJWT } from "../middlewares/auth.middlewares.js";
+import { cropRecommendation } from "../controllers/cropRecommendation.controller.js"
 
 router
   .route("/register")
@@ -40,12 +41,6 @@ router
       )
     );
   })
-  .post((req, res) => {
-    const data = {
-      crop: "Rice",
-      growing_period: "18",
-    };
-    res.render("crop_recommendation-result", data);
-  });
+  .post(cropRecommendation);
 
 export default router;
