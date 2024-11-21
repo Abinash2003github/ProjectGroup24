@@ -16,7 +16,7 @@ try:
     rainfall = float(sys.argv[7])
 
     # Load the model
-    with open('F:/SNU Project 24/Project24/ML Model/Crop_&_Fertilizer_Recommendation/Models/model.pkl', 'rb') as file:
+    with open('F:/SNU Project 24/Project24/ML Model/Crop_&_Fertilizer_Recommendation/Models/RandomForest.pkl', 'rb') as file:
         model = pkl.load(file)
         
         # Prepare data as a 2D array
@@ -36,8 +36,6 @@ try:
         sys.stdout.write(output[0])
     else: 
          sys.stdout.write("Sorry are not able to recommend a proper crop for this environment")
-    # Send the output back to Node.js as a JSON string
-    # sys.stdout.write(output[0])
 
 except Exception as e:
     sys.stderr.write(str(e))

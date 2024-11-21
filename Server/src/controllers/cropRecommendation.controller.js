@@ -39,7 +39,7 @@ const runPyModel = (nitrogen, phosphorus, potassium, temperature, humidity, ph, 
 
     childPython.on("close", (code) => {
       if (code !== 0) {
-        reject(new ApiError(500, err));
+        reject(err);
       } else {
         resolve(output);
       }
@@ -61,7 +61,7 @@ const cropRecommendation = asyncHandler(async (req, res) => {
   if (!rainfall) throw new ApiError(401, "Enter the Rainfall value");
 
   //connect and get data from py script by sending the inputs
-  const result = await runPyModel(
+  const result = runPyModel(
     nitrogen,
     phosphorus,
     potassium,
@@ -71,14 +71,20 @@ const cropRecommendation = asyncHandler(async (req, res) => {
     rainfall
   );
 
-  //store recived data in object
-  const data = {
-    crop: result,
-    growing_period: "60",
-  };
+  result
+    .then((val) => {
+      //store recived data in object
+      const data = {
+        crop: val,
+        growing_period: "60",
+      };
 
-  //send respond
-  res.status(201).render("crop_recommendation-result", data); // Render HTML
+      //send respond
+      res.status(201).render("crop_recommendation-result", data); // Render HTML
+    })
+    .catch((err) => {
+      new ApiError(500, err);
+    });
 });
 
 export { cropRecommendation };

@@ -13,8 +13,15 @@
 
     <style>
       :root {
+        --bg-color-nav: #ffffff;
         --bg-color-form: #ffffff;
-        --bg-color: #effad6;
+        --bg-color-btn1: #62be1f;
+        --bg-color-btn2: #6df10f;
+        --bg-color: #d1e391;
+        --text-color-body: #333;
+        --text-color-nav: #62be1f;
+        --text-color-btn: #62be1f;
+        --text-color-btn-hover: #effad6;
       }
 
       html {
@@ -31,17 +38,61 @@
         text-decoration: none;
         list-style: none;
         font-family: Arial, sans-serif; /* Replace with your preferred font */
-        color: #333;
         outline: none;
         scroll-behavior: smooth;
         font: inherit;
         color: inherit;
       }
-
+      a {
+        color: inherit; /* Inherit color from parent */
+        text-decoration: none; /* Remove underline */
+      }
       body {
         background-color: var(--bg-color);
       }
+      /* Navbar styles */
+      .navbar {
+        background-color: var(--bg-color-nav);
+        padding: 0.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 5;
+        box-shadow: 0px 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar .logo {
+        color: var(--text-color-nav);
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .navbar ul {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .navbar ul li {
+        list-style: none;
+      }
+
+      .navbar ul li a {
+        color: var(--text-color-nav);
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.313rem;
+        transition: all 0.3s ease;
+      }
+
+      .navbar ul li a:hover {
+        background-color: var(--bg-color-btn1);
+        color: white;
+      }
       .form-container {
+        margin-top: 2.75rem;
         height: 100%;
         width: 100%;
         display: flex;
@@ -55,9 +106,10 @@
         background-color: var(--bg-color-form);
         position: relative;
         top: 4rem;
+        color: var(--text-color-body);
         border-radius: 4px;
         border: 0.0125rem solid rgba(0, 0, 0, 0.4);
-        box-shadow: 0px 0.2px 0.5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -75,27 +127,44 @@
         padding: 0.125rem 0rem 0.125rem 0.5rem;
       }
       button {
-        background-color: #1facdf;
+        background-color: var(--bg-color-btn1);
         color: white;
         padding: 0.5rem 1.725rem;
         border: none;
         border-radius: 0.5rem;
         box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
         cursor: pointer;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        /* transition: background-color 0.3s ease, box-shadow 0.3s ease; */
+        transition: all 0.3s ease;
         position: relative;
         top: 0.6rem;
       }
 
       button:hover {
-        background-color: #53ccf7; /* Change color on hover */
+        background-color: var(--bg-color-btn2); /* Change color on hover */
         box-shadow: 0px 0.3rem 0.6rem rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
       }
     </style>
   </head>
   <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#">Next generation agriculture</a>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
     <div class="form-container">
-      <form method="post" target="_blank" action="http://localhost:8000/api/crops_recommendation">
+      <form
+        method="post"
+        target="_blank"
+        action="http://localhost:8000/api/crops_recommendation"
+      >
         <div class="input-container">
           <label for="nitrogen">Nitrogen</label>
           <input type="number" name="nitrogen" step="any" id="" required />
