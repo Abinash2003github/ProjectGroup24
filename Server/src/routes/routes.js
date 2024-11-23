@@ -11,7 +11,9 @@ import { createUser } from "../controllers/createUser.controller.js";
 import { logInUser } from "../controllers/logInUser.controller.js";
 import { logOutUser } from "../controllers/logOutUser.controller.js";
 import { verifyJWT } from "../middlewares/auth.middlewares.js";
-import { cropRecommendation } from "../controllers/cropRecommendation.controller.js"
+import { cropRecommendation } from "../controllers/cropRecommendation.controller.js";
+import { fertilizerRecommendation } from "../controllers/fertilizerRecommendation.controller.js";
+import { diseaseDetection } from "../controllers/diseaseDetection.controller.js";
 
 router
   .route("/register")
@@ -35,12 +37,30 @@ router
   .route("/crops_recommendation")
   .get((req, res) => {
     res.sendFile(
-      path.join(
-        __dirname,
-        "../../../Frontend/crop_recommendation/crop_recommendation.html"
-      )
+      path.join(__dirname, "../../../Frontend/crop_recommendation/crop_recommendation.html")
     );
   })
   .post(cropRecommendation);
+
+router
+  .route("/fertilizer_recommendation")
+  .get((req, res) => {
+    res.sendFile(
+      path.join(
+        __dirname,
+        "../../../Frontend/fertilizer_recommendation/fertilizer_recommendation.html"
+      )
+    );
+  })
+  .post(fertilizerRecommendation);
+
+router
+  .route("/disease_detection")
+  .get((req, res) => {
+    res.sendFile(
+      path.join(__dirname, "../../../Frontend/disease_detection/disease_detection.html")
+    );
+  })
+  .post(diseaseDetection);
 
 export default router;

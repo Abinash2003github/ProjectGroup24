@@ -80,11 +80,12 @@ const cropRecommendation = asyncHandler(async (req, res) => {
       };
 
       //send respond
-      res.status(201).render("crop_recommendation-result", data); // Render HTML
+      res.status(201).render("crop_recommendation/crop_recommendation_result", data); // Render HTML
     })
     .catch((err) => {
       new ApiError(500, err);
     });
+    
 });
 
 export { cropRecommendation };
