@@ -1,200 +1,383 @@
 <!DOCTYPE html>
 <html lang="en" font>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Crop Recommendation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
 
-    <style>
-      :root {
-        --bg-color-nav: #ffffff;
-        --bg-color-form: #ffffff;
-        --bg-color-btn1: #62be1f;
-        --bg-color-btn2: #6df10f;
-        --bg-color: #d1e391;
-        --text-color-body: #333;
-        --text-color-nav: #62be1f;
-        --text-color-btn: #62be1f;
-        --text-color-btn-hover: #effad6;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crop Recommendation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <!-- font-awesome mdnjs-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --bg-color-nav: #ffffff;
+      --bg-color-form: #ffffff;
+      --bg-color-btn1: #62be1f;
+      --bg-color-btn2: #6df10f;
+      --bg-color: #d1e391;
+      --text-color-body: #333;
+      --text-color-nav: #62be1f;
+      --text-color-btn: #62be1f;
+      --text-color-btn-hover: #effad6;
+    }
+
+    html {
+      font-size: 16px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      list-style: none;
+      font-family: Arial, sans-serif;
+      outline: none;
+      /* outline: 1px solid red; */
+      scroll-behavior: smooth;
+      font: inherit;
+      color: inherit;
+    }
+
+    a {
+      color: inherit;
+      /* Inherit color from parent */
+      text-decoration: none;
+      /* Remove underline */
+    }
+
+    body {
+      background-color: var(--bg-color);
+    }
+
+    /* ===================== NAVBAR ===================== */
+    .navbar {
+      width: 100%;
+      height: 4.063rem;
+      z-index: 5;
+      background-color: var(--bg-color-nav);
+      padding: 0.5rem 1rem;
+      color: var(--text-color-nav);
+      box-shadow: 0px 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      position: fixed;
+      top: 0;
+    }
+
+    /* ============== logo ============== */
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .navbar .logo #b-name {
+      display: block;
+    }
+
+    .navbar .logo #b-name-short {
+      display: none;
+    }
+
+
+    .navbar .nav__ref {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .navbar .nav__ref .nav__list {
+      background-color: var(--bg-color-nav);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .navbar .nav__ref .nav__list a span {
+      color: var(--text-color-body);
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.313rem;
+      transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    .navbar .nav__ref .nav__list a span:hover {
+      background-color: var(--bg-color-btn1);
+      color: white;
+    }
+
+    .navbar .nav__ref .nav__action {
+      margin-right: 0.5rem;
+      color: var(--text-color-btn-hover);
+
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .navbar .nav__ref .nav__action .fa-user {
+      padding: 0.625rem;
+      border-radius: 45%;
+
+      transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    .navbar .nav__ref .nav__action .fa-user:hover {
+      padding: 0.625rem;
+      border-radius: 45%;
+      background-color: var(--text-color-body);
+
+      color: white;
+      cursor: pointer;
+    }
+
+    .icon {
+      color: var(--text-color-body);
+      cursor: pointer;
+      padding: 1rem 0.625rem;
+    }
+
+    /* ===================== Menu btn open&close button ===================== */
+    #menu-open,
+    #menu-close {
+      display: none;
+    }
+
+    @media screen and (max-width: 1024px) {
+
+      /* ============== logo ============== */
+      .navbar .logo #b-name {
+        display: none;
       }
 
-      html {
-        font-size: 16px;
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-style: normal;
+      .navbar .logo #b-name-short {
+        display: block;
       }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-        list-style: none;
-        font-family: Arial, sans-serif; /* Replace with your preferred font */
-        outline: none;
-        scroll-behavior: smooth;
-        font: inherit;
-        color: inherit;
-      }
-      a {
-        color: inherit; /* Inherit color from parent */
-        text-decoration: none; /* Remove underline */
-      }
-      body {
-        background-color: var(--bg-color);
-      }
-      /* Navbar styles */
-      .navbar {
-        background-color: var(--bg-color-nav);
-        padding: 0.5rem 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 5;
-        box-shadow: 0px 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
+      /* ===================== Menu btn open&close button ===================== */
+      #menu-open,
+      #menu-close {
+        display: block;
       }
 
-      .navbar .logo {
-        color: var(--text-color-nav);
-        font-size: 1.5rem;
-        font-weight: 700;
-      }
-
-      .navbar ul {
-        display: flex;
-        gap: 1rem;
-      }
-
-      .navbar ul li {
-        list-style: none;
-      }
-
-      .navbar ul li a {
-        color: var(--text-color-nav);
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-        border-radius: 0.313rem;
-        transition: all 0.3s ease;
-      }
-
-      .navbar ul li a:hover {
-        background-color: var(--bg-color-btn1);
-        color: white;
-      }
-      .form-container {
-        margin-top: 2.75rem;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      form {
-        padding: 2rem 3rem;
-        width: 24rem;
-        height: 32rem;
-        background-color: var(--bg-color-form);
-        position: relative;
-        top: 4rem;
-        color: var(--text-color-body);
-        border-radius: 4px;
-        border: 0.0125rem solid rgba(0, 0, 0, 0.4);
-        box-shadow: 0px 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
+      /*===================== NavBar CSS design =====================*/
+      .navbar .nav__ref .nav__list {
+        width: 15rem;
+        height: max-content;
+        padding-top: 0rem;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+        gap: unset;
+
+        position: fixed;
+        top: 0px;
+        right: -15rem;
+        /* change if menu list width change */
+        transition: transform 0.3s ease-in-out;
       }
-      .input-container {
-        width: 80%;
+
+      .navbar .nav__ref .nav__list a {
+        width: 100%;
+        height: 5rem;
+        border-bottom: 0.05rem solid var(--text-color-body);
+
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-      }
-      input {
-        height: 100%;
-        width: 5rem;
-        padding: 0.125rem 0rem 0.125rem 0.5rem;
-      }
-      button {
-        background-color: var(--bg-color-btn1);
-        color: white;
-        padding: 0.5rem 1.725rem;
-        border: none;
-        border-radius: 0.5rem;
-        box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        /* transition: background-color 0.3s ease, box-shadow 0.3s ease; */
-        transition: all 0.3s ease;
-        position: relative;
-        top: 0.6rem;
+
+        transition: box-shadow 0.3s ease-in-out;
       }
 
-      button:hover {
-        background-color: var(--bg-color-btn2); /* Change color on hover */
-        box-shadow: 0px 0.3rem 0.6rem rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+      .navbar .nav__ref .nav__list a:visited,
+      .navbar .nav__ref .nav__list a:active {
+        color: initial;
+        /* Ensure the link doesn't change color after visiting */
+        text-decoration: none;
+        /* Ensure no underline after clicking */
       }
-    </style>
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="logo">
-        <a href="#">Next generation agriculture</a>
-      </div>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
 
-    <div class="form-container">
-      <form
-        method="post"
-        target="_blank"
-        action="http://localhost:8000/api/crops_recommendation"
-      >
-        <div class="input-container">
-          <label for="nitrogen">Nitrogen</label>
-          <input type="number" name="nitrogen" step="any" id="" required />
-        </div>
-        <div class="input-container">
-          <label for="phosphorus">Phosphorus</label>
-          <input type="number" name="phosphorus" step="any" id="" required />
-        </div>
-        <div class="input-container">
-          <label for="potassium">Potassium</label>
-          <input type="number" name="potassium" step="any" id="" required />
-        </div>
-        <div class="input-container">
-          <label for="temperature">Temperature</label>
-          <input type="number" name="temperature" step="any" id="" required />
-        </div>
-        <div class="input-container">
-          <label for="humidity">Humidity</label>
-          <input type="number" name="humidity" step="any" id="" required />
-        </div>
-        <div class="input-container">
-          <label for="ph">pH</label>
-          <input type="number" name="ph" step="any" id="" required />
-        </div>
-        <div class="input-container">
-          <label for="rainfall">Rainfall</label>
-          <input type="number" name="rainfall" step="any" id="" required />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+      .navbar .nav__ref .nav__list a:hover {
+        box-shadow: 0rem 0rem 0.3rem 0.275rem rgba(0, 0, 0, 0.1) inset;
+      }
+
+      .navbar .nav__ref .nav__list>i {
+        color: var(--text-color-body);
+        padding: 1rem 1rem;
+
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+
+      .navbar .nav__ref .nav__list a span {
+        display: block;
+      }
+
+      .navbar .nav__ref .nav__list a span:hover {
+        background-color: initial;
+        color: var(--text-color-body);
+      }
+    }
+
+    /* ===================== FORM ===================== */
+    .form-container {
+      margin-top: 6.75rem;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    form {
+      padding: 1rem 3rem 2rem;
+      width: 24rem;
+      height: 32rem;
+      background-color: var(--bg-color-form);
+      color: var(--text-color-body);
+      border-radius: 4px;
+      border: 0.0125rem solid rgba(0, 0, 0, 0.4);
+      box-shadow: 0px 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    .form_lable{
+            font-weight: 700;
+            text-align: center;
+            text-decoration: var(--text-color-body) solid underline;
+        }
+    .input-container {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    input {
+      height: 100%;
+      width: 5rem;
+      padding: 0.125rem 0rem 0.125rem 0.5rem;
+      background-color: white;
+      
+      color: var(--text-color-body);
+      border: 0.063rem solid rgba(0, 0, 0, 0.4);
+      border-radius: 0.125rem;
+    }
+
+    button {
+      background-color: var(--bg-color-btn1);
+      color: white;
+      padding: 0.5rem 1.725rem;
+      border: none;
+      border-radius: 0.5rem;
+      box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      /* transition: background-color 0.3s ease, box-shadow 0.3s ease; */
+      transition: all 0.3s ease;
+      position: relative;
+      top: 0.6rem;
+    }
+
+    button:hover {
+      background-color: var(--bg-color-btn2);
+      /* Change color on hover */
+      /* color: #62be1f; */
+      box-shadow: 0px 0.3rem 0.6rem rgba(0, 0, 0, 0.2);
+      /* Darker shadow on hover */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a id="b-name" href="#">Next generation agriculture</a>
+      <a id="b-name-short" href="#">Nga</a>
     </div>
-  </body>
+    <div class="nav__ref">
+      <div id="menu" class="nav__list">
+        <i id="menu-close" class="icon fa-solid fa-bars"></i>
+        <a href="#"><span>Home</span></a>
+        <a href="#"><span>Crop recommendation</span></a>
+        <a href="#"><span>Fertilizer recommendation</span></a>
+        <a href="#"><span>Disease detection</span></a>
+        <a href="#"><span>About</span></a>
+      </div>
+
+      <div class="nav__action">
+        <i class="icon fa-regular fa-user"></i>
+        <i id="menu-open" class="icon fa-solid fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="form-container">
+    <form method="post" target="_blank" action="http://localhost:8000/api/crops_recommendation">
+      <h2 class="form_lable">Crop Recommendation</h2>
+      <div class="input-container">
+        <label for="nitrogen">Nitrogen</label>
+        <input type="number" name="nitrogen" step="any" id="" required />
+      </div>
+      <div class="input-container">
+        <label for="phosphorus">Phosphorus</label>
+        <input type="number" name="phosphorus" step="any" id="" required />
+      </div>
+      <div class="input-container">
+        <label for="potassium">Potassium</label>
+        <input type="number" name="potassium" step="any" id="" required />
+      </div>
+      <div class="input-container">
+        <label for="temperature">Temperature</label>
+        <input type="number" name="temperature" step="any" id="" required />
+      </div>
+      <div class="input-container">
+        <label for="humidity">Humidity</label>
+        <input type="number" name="humidity" step="any" id="" required />
+      </div>
+      <div class="input-container">
+        <label for="ph">pH</label>
+        <input type="number" name="ph" step="any" id="" required />
+      </div>
+      <div class="input-container">
+        <label for="rainfall">Rainfall</label>
+        <input type="number" name="rainfall" step="any" id="" required />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+<script>
+  //===================== Menu btn open&close =====================
+  let open = document.getElementById("menu-open");
+  let close = document.getElementById("menu-close");
+  let menu = document.getElementById("menu");
+  open.addEventListener("click", () => {
+    menu.style.transform = "translateX(-100%)";
+  });
+  close.addEventListener("click", () => {
+    menu.style.transform = "translateX(0%)";
+  });
+</script>
+
 </html>
