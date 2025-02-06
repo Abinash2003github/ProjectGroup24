@@ -27,10 +27,10 @@ try:
 
 
     crop_dict={
-    1:'rice', 2:'maize', 3:'chickpea', 4:'kidneybeans',5: 'pigeonpeas',
-      6: 'mothbeans',7: 'mungbean',8: 'blackgram',9: 'lentil',10: 'pomegranate',
-       11: 'banana',12: 'mango',13: 'grapes',14: 'watermelon', 15:'muskmelon',16: 'apple',
-      17: 'orange', 18:'papaya', 19:'coconut', 20:'cotton', 21:'jute',22: 'coffee'
+    'rice','maize','chickpea','kidneybeans','pigeonpeas',
+      'mothbeans','mungbean','blackgram','lentil','pomegranate',
+       'banana','mango','grapes','watermelon','muskmelon','apple',
+      'orange', 'papaya','coconut','cotton','jute','coffee'
     }
     if output[0] in crop_dict.values():  # Check if the predicted crop is in the crop_dict values
         sys.stdout.write(output[0])

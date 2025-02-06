@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const cropsSchema = new mongoose.Schema({
   _id: {
-    type: String,
+    type: Number,
     required: true,
     unique: true,
     lowercase: true,
@@ -33,12 +33,14 @@ const cropsSchema = new mongoose.Schema({
     enum: [1, 2, 3, 4, 5, 6, 7],
   },
   rainfall: {
-    type: Number,
+    type: [Number],
     required: true,
+    default: null,
   },
   growing_period: {
     type: Number,
     required: true,
+    defauld: null,
   },
 });
 

@@ -7,9 +7,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-import { createUser } from "../controllers/createUser.controller.js";
-import { logInUser } from "../controllers/logInUser.controller.js";
-import { logOutUser } from "../controllers/logOutUser.controller.js";
+import { createUser, logInUser, logOutUser  } from "../controllers/user.controller.js";
 import { verifyJWT } from "../middlewares/auth.middlewares.js";
 import { cropRecommendation } from "../controllers/cropRecommendation.controller.js";
 import { fertilizerRecommendation } from "../controllers/fertilizerRecommendation.controller.js";
