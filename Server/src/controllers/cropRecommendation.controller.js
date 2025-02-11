@@ -1,53 +1,8 @@
 import asyncHandler from "../utils/asyncHandler.js";
 import ApiError from "../utils/ApiError.js";
-import ApiResponse from "../utils/ApiResponse.js";
-import path from "path";
-// Create a helper function to mimic __dirname
-import { fileURLToPath } from "url";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import runPy from "../utils/ApiRunPy.js";
+import { Crop } from "../models/crops.model.js";
 
-import { spawn } from "child_process";
-
-//function to run python model
-const runPyModel = (nitrogen, phosphorus, potassium, temperature, humidity, ph, rainfall) => {
-  return new Promise((resolve, reject) => {
-    const childPython = spawn(
-      "python",
-      [
-        path.join(__dirname, "../../scripts/cropRecommendation.py").toString(),
-        nitrogen,
-        phosphorus,
-        potassium,
-        temperature,
-        humidity,
-        ph,
-        rainfall,
-      ].map(String)
-    );
-
-    let output = "";
-    let err = "";
-
-    childPython.stdout.on("data", (data) => {
-      output += data.toString();
-    });
-
-    childPython.stderr.on("data", (data) => {
-      err += data.toString();
-    });
-
-    childPython.on("close", (code) => {
-      if (code !== 0) {
-        reject(err);
-      } else {
-        resolve(output);
-      }
-    });
-  });
-};
-
-//
 const cropRecommendation = asyncHandler(async (req, res) => {
   const { nitrogen, phosphorus, potassium, temperature, humidity, ph, rainfall } = req.body;
 
@@ -60,32 +15,31 @@ const cropRecommendation = asyncHandler(async (req, res) => {
   if (!ph) throw new ApiError(401, "Enter the pH value");
   if (!rainfall) throw new ApiError(401, "Enter the Rainfall value");
 
-  //connect and get data from py script by sending the inputs
-  const result = runPyModel(
+  //Connect and get data from Python Code within "script" by sending the inputs
+  const result = await runPy("cropRecommendation.py", [
     nitrogen,
     phosphorus,
     potassium,
     temperature,
     humidity,
     ph,
-    rainfall
-  );
+    rainfall,
+  ]);
 
-  result
-    .then((val) => {
-      //store recived data in object
-      const data = {
-        crop: val,
-        growing_period: "60",
-      };
+  //Fetch Data From DataBase
+  const cropData = await Crop.findOne({cropName: result});
+  if(!cropData){
+    throw new ApiError(500,'Data Not Found!!!');
+  }
+  
+  //Store recived data in object
+  const data = {
+    crop: result,
+    growing_period: cropData.growing_period,
+  };
 
-      //send respond
-      res.status(201).render("crop_recommendation/crop_recommendation_result", data); // Render HTML
-    })
-    .catch((err) => {
-      new ApiError(500, err);
-    });
-    
+  //Send respond
+  res.status(201).render("crop_recommendation/crop_recommendation_result", data); // Render HTML
 });
 
 export { cropRecommendation };

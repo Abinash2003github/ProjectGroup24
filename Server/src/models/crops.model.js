@@ -1,13 +1,12 @@
 import mongoose from "mongoose";
 
 const cropsSchema = new mongoose.Schema({
-  _id: {
-    type: Number,
+  customId: {
+    type: String,
     required: true,
     unique: true,
-    lowercase: true,
   },
-  cropsName: {
+  cropName: {
     type: String,
     required: true,
   },
@@ -40,7 +39,7 @@ const cropsSchema = new mongoose.Schema({
   growing_period: {
     type: Number,
     required: true,
-    defauld: null,
+    default: null,
   },
 });
 

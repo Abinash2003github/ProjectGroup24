@@ -27,12 +27,10 @@ try:
 
 
     crop_dict={
-    'rice','maize','chickpea','kidneybeans','pigeonpeas',
-      'mothbeans','mungbean','blackgram','lentil','pomegranate',
-       'banana','mango','grapes','watermelon','muskmelon','apple',
-      'orange', 'papaya','coconut','cotton','jute','coffee'
+    'rice','maize','chickpea','kidneybeans','pigeonpeas','mothbeans','mungbean','blackgram','lentil','pomegranate',
+        'banana','mango','grapes','watermelon','muskmelon','apple','orange', 'papaya','coconut','cotton','jute','coffee'
     }
-    if output[0] in crop_dict.values():  # Check if the predicted crop is in the crop_dict values
+    if output[0] in crop_dict:  # Check if the predicted crop is in the crop_dict values
         sys.stdout.write(output[0])
     else: 
          sys.stdout.write("Sorry are not able to recommend a proper crop for this environment")
