@@ -27,11 +27,11 @@ const cropRecommendation = asyncHandler(async (req, res) => {
   ]);
 
   //Fetch Data From DataBase
-  const cropData = await Crop.findOne({cropName: result});
-  if(!cropData){
-    throw new ApiError(500,'Data Not Found!!!');
+  const cropData = await Crop.findOne({ cropName: result });
+  if (!cropData) {
+    throw new ApiError(500, "Data Not Found!!!");
   }
-  
+
   //Store recived data in object
   const data = {
     crop: result,

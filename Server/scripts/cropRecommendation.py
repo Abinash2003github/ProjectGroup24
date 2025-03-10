@@ -16,7 +16,7 @@ try:
     rainfall = float(sys.argv[7])
 
     # Load the model
-    with open('F:/SNU Project 24/Project24/ML Model/Crop_&_Fertilizer_Recommendation/Models/RandomForest.pkl', 'rb') as file:
+    with open('F:/SNU Project 24/Project24/ML Model/Crop_Recommendation/Models/RandomForest.pkl', 'rb') as file:
         model = pkl.load(file)
         
         # Prepare data as a 2D array
