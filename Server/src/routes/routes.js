@@ -7,11 +7,14 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-import { createUser, logInUser, logOutUser  } from "../controllers/user.controller.js";
-import { verifyJWT } from "../middlewares/auth.middlewares.js";
+import { createUser, logInUser, logOutUser } from "../controllers/user.controller.js";
 import { cropRecommendation } from "../controllers/cropRecommendation.controller.js";
 import { fertilizerRecommendation } from "../controllers/fertilizerRecommendation.controller.js";
 import { diseaseDetection } from "../controllers/diseaseDetection.controller.js";
+
+//import middleware
+import { verifyJWT } from "../middlewares/auth.middlewares.js";
+import { upload } from "../middlewares/multer.middlewares.js";
 
 router
   .route("/register")
@@ -59,6 +62,6 @@ router
       path.join(__dirname, "../../../Frontend/disease_detection/disease_detection.html")
     );
   })
-  .post(diseaseDetection);
+  .post(upload.single("img"), diseaseDetection);
 
 export default router;

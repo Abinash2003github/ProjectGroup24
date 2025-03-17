@@ -4,8 +4,8 @@ import ApiResponse from "../utils/ApiResponse.js";
 
 const diseaseDetection = asyncHandler(async (req, res) => {
   const data = {
-    diseaseName: "Name",
-    diseaseDescription: "Description",
+    diseaseName: req.body.crop,
+    diseaseDescription: req.file.path,
     diseaseCure: "Cure",
   };
   //send respond
