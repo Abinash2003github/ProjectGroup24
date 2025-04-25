@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <title>Home | NextGen Agriculture</title>
+        <style>
+            /* ================ CSS Variables ================ */
+            :root {
+                --height-header: 3.5rem;
+                --primary-color: #6d8654;
+                --secondary-color: #879e6f;
+                --black: #000000;
+                --white: #edeced;
+                --gray-border: 1px solid gray;
+                --transition-speed: 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+            }
+
+            /* ================ Base Styles ================ */
+            html {
+                font-size: 16px;
+                font-family: "Roboto", sans-serif;
+                font-weight: 400;
+                scroll-behavior: smooth;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                text-decoration: none;
+                list-style: none;
+                border: none;
+                outline: none;
+                font: inherit;
+                color: inherit;
+            }
+
+            body {
+                background-color: var(--primary-color);
+                width: 100%;
+                /* min-height: 100vh; */
+            }
+
+            /* ================ Header Styles ================ */
+            header {
+                background-color: var(--white);
+                width: 100%;
+                height: var(--height-header);
+                position: relative;
+            }
+
+            .header-container {
+                margin: 0 auto;
+                height: 100%;
+                width: calc(100% - 1.5rem);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            /* ================ Navigation Styles ================ */
+            .nav-container {
+                position: relative;
+            }
+
+            .navbar {
+                height: 100vh;
+                width: 14rem;
+                background-color: var(--white);
+                border-right: var(--gray-border);
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                transform: translateX(-100%);
+                transition: transform var(--transition-speed);
+            }
+
+            .nav-list {
+                width: 100%;
+                height: 5rem;
+                font-size: 0.8rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: var(--gray-border);
+                transition: background-color 0.2s ease;
+            }
+
+            .nav-list:hover {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+
+            .menu-close-container {
+                height: 3.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                border-bottom: var(--gray-border);
+            }
+
+            .menu-icon {
+                margin-right: 1rem;
+                padding: 0.5rem;
+                font-size: 1.5rem;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            }
+
+            .menu-icon:hover {
+                transform: scale(1.1);
+            }
+
+            /* ================ Header Right Section ================ */
+            .header-right-section {
+                height: 100%;
+                width: max-content;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .profile {
+                margin-right: 1rem;
+                padding: 0.5rem 1.875rem;
+                color: var(--black);
+                border: 0.125rem solid var(--primary-color);
+                border-radius: 1rem;
+                font-size: 0.875rem;
+                transition: opacity 0.2s ease;
+            }
+
+            .login-btn,
+            .logout-btn {
+                padding: 0.5rem 1.875rem;
+                background-color: var(--primary-color);
+                color: var(--black);
+                border-radius: 1rem;
+                font-size: 0.875rem;
+                transition: opacity 0.2s ease;
+            }
+
+            .login-btn:hover,
+            .logout-btn:hover {
+                opacity: 0.9;
+            }
+
+            /* ================ Main Content ================ */
+            main {
+                padding: 0rem;
+            }
+
+            .content {
+                margin-top: 6rem;
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .heading {
+                font-weight: 600;
+                font-size: 5rem;
+                letter-spacing: 0.25rem;
+                text-align: center;
+            }
+
+            .features-container {
+                margin-top: 8rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 7rem;
+            }
+
+            .feature1 {
+                width: 18rem;
+                background-color: rgba(0, 0, 0, 0.5);
+                font-size: 0.875rem;
+                display: block;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s;
+            }
+            .feature1:hover{
+                transform: translateY(-5px);
+            }
+
+            .feature-image {
+                padding: 0.3rem 0.3rem 0rem 0.3rem;
+                width: 100%;
+                position: relative;
+                z-index: 4;
+            }
+
+            .feature-image img {
+                width: 100%;
+            }
+
+            .feature-name {
+                    margin-top: -1.5rem;
+                    height: 3.5rem;
+                    width: 100%;
+                    background-color: #edeced;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    z-index: 5;
+            }
+
+            .feature-name i {
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Header Section -->
+        <header>
+            <div class="header-container">
+                <!-- Navigation Container -->
+                <div class="nav-container">
+                    <i id="menu-open" class="fas fa-bars menu-icon"></i>
+                    <nav class="navbar" id="navbar">
+                        <div class="menu-close-container">
+                            <i id="menu-close" class="fas fa-times menu-icon"></i>
+                        </div>
+                        <a class="nav-list" href="#">HOME</a>
+                        <a class="nav-list" href="#">CROP RECOMMENDATION</a>
+                        <a class="nav-list" href="#">FERTILIZER RECOMMENDATION</a>
+                        <a class="nav-list" href="#">DISEASE DETECTION</a>
+                        <a class="nav-list" href="#">ABOUT</a>
+                    </nav>
+                </div>
+
+                <!--Right Section of Header-->
+                <div class="header-right-section">
+                    <div class="before-login">
+                        <a href="#" class="login-btn">LOG IN</a>
+                    </div>
+                    <div class="after-login" style="display: none">
+                        <a href="#" class="profile">PROFILE</a>
+                        <a href="#" class="logout-btn">LOG OUT</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="content">
+                <div class="heading">NextGen Agriculture</div>
+                <div class="features-container">
+                    <a href class="feature1">
+                        <div class="feature-image">
+                            <img src="./image/pexels-pixabay-162870.png" alt="CROP RECOMMENDATION" />
+                        </div>
+                        <div class="feature-name">
+                            <i>CROP RECOMMENDATION</i>
+                        </div>
+                    </a>
+                    <a href class="feature1">
+                        <div class="feature-image">
+                            <img src="./image/pexels-sippakorn-yamkasikorn-1745809-3696170.png" alt="FERTILIZER RECOMMENDATION" />
+                        </div>
+                        <div class="feature-name">
+                            <i>FERTILIZER RECOMMENDATION</i>
+                        </div>
+                    </a>
+                    <a href class="feature1">
+                        <div class="feature-image">
+                            <img src="./image/pexels-marina-zasorina-7718268.png" alt="DISEASE DETECTION" />
+                        </div>
+                        <div class="feature-name">
+                            <i>DISEASE DETECTION</i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <script>
+            // Menu Toggle Functionality
+            const menu = document.getElementById("navbar");
+            const openBtn = document.getElementById("menu-open");
+            const closeBtn = document.getElementById("menu-close");
+            openBtn.addEventListener("click", () => {
+                menu.style.transform = "translateX(0)";
+            });
+            closeBtn.addEventListener("click", () => {
+                menu.style.transform = "translateX(-100%)";
+            });
+            // Close menu when clicking outside
+            document.addEventListener("click", (e) => {
+                if (!menu.contains(e.target) && e.target !== openBtn) {
+                    menu.style.transform = "translateX(-100%)";
+                }
+            });
+
+            //LogIN LogOUT Swithch
+        </script>
+    </body>
+</html>
