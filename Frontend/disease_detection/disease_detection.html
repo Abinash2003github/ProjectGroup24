@@ -1,385 +1,338 @@
 <!DOCTYPE html>
-<html lang="en" font>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Disease Detection</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet" />
-    <!-- font-awesome mdnjs-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
 
-    <style>
-        :root {
-            --bg-color-nav: #ffffff;
-            --bg-color-form: #ffffff;
-            --bg-color-btn1: #62be1f;
-            --bg-color-btn2: #6df10f;
-            --bg-color: #d1e391;
-            --text-color-body: #333;
-            --text-color-nav: #62be1f;
-            --text-color-btn: #62be1f;
-            --text-color-btn-hover: #effad6;
-        }
-
-        html {
-            font-size: 16px;
-            font-family: "Roboto", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none;
-            list-style: none;
-            font-family: Arial, sans-serif;
-            outline: none;
-            scroll-behavior: smooth;
-            font: inherit;
-            color: inherit;
-        }
-
-        a {
-            color: inherit;
-            /* Inherit color from parent */
-            text-decoration: none;
-            /* Remove underline */
-        }
-
-        body {
-            background-color: var(--bg-color);
-        }
-
-        /* ===================== NAVBAR ===================== */
-        .navbar {
-            width: 100%;
-            height: 4.063rem;
-            z-index: 5;
-            background-color: var(--bg-color-nav);
-            padding: 0.5rem 1rem;
-            color: var(--text-color-nav);
-            box-shadow: 0px 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            position: fixed;
-            top: 0;
-        }
-
-        /* ============== logo ============== */
-        .navbar .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .navbar .logo #b-name {
-            display: block;
-        }
-
-        .navbar .logo #b-name-short {
-            display: none;
-        }
-
-        .navbar .nav__ref {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .navbar .nav__ref .nav__list {
-            background-color: var(--bg-color-nav);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .navbar .nav__ref .nav__list a span {
-            color: var(--text-color-body);
-            font-size: 0.875rem;
-            padding: 0.5rem 1rem;
-            border-radius: 0.313rem;
-            transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
-        }
-
-        .navbar .nav__ref .nav__list a span:hover {
-            background-color: var(--bg-color-btn1);
-            color: white;
-        }
-
-        .navbar .nav__ref .nav__action {
-            margin-right: 0.5rem;
-            color: var(--text-color-btn-hover);
-
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .navbar .nav__ref .nav__action .fa-user {
-            padding: 0.625rem;
-            border-radius: 45%;
-
-            transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
-        }
-
-        .navbar .nav__ref .nav__action .fa-user:hover {
-            padding: 0.625rem;
-            border-radius: 45%;
-            background-color: var(--text-color-body);
-
-            color: white;
-            cursor: pointer;
-        }
-
-        .icon {
-            color: var(--text-color-body);
-            cursor: pointer;
-            padding: 1rem 0.625rem;
-        }
-
-        /* ===================== Menu btn open&close button ===================== */
-        #menu-open,
-        #menu-close {
-            display: none;
-        }
-
-        @media screen and (max-width: 1024px) {
-
-            /* ============== logo ============== */
-            .navbar .logo #b-name {
-                display: none;
+        <title>Disease Detection | NextGen Agriculture</title>
+        <style>
+            /* ================ CSS Variables ================ */
+            :root {
+                --height-header: 3.5rem;
+                --primary-color: #6d8654;
+                --secondary-color: #879e6f;
+                --black: #000000;
+                --white: #edeced;
+                --gray-border: 1px solid gray;
+                --transition-speed: 0.3s cubic-bezier(0.86, 0, 0.07, 1);
             }
 
-            .navbar .logo #b-name-short {
-                display: block;
+            /* ================ Base Styles ================ */
+            html {
+                font-size: 16px;
+                font-family: "Roboto", sans-serif;
+                font-weight: 400;
+                scroll-behavior: smooth;
             }
 
-            /* ===================== Menu btn open&close button ===================== */
-            #menu-open,
-            #menu-close {
-                display: block;
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                text-decoration: none;
+                list-style: none;
+                border: none;
+                outline: none;
+                font: inherit;
+                color: inherit;
             }
 
-            /*===================== NavBar CSS design =====================*/
-            .navbar .nav__ref .nav__list {
-                width: 15rem;
-                height: max-content;
-                padding-top: 0rem;
-                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            body {
+                background-color: var(--primary-color);
+                width: 100%;
+                /* min-height: 100vh; */
+            }
+
+            /* ================ Header Styles ================ */
+            header {
+                background-color: var(--white);
+                width: 100%;
+                height: var(--height-header);
+                position: relative;
+            }
+
+            .header-container {
+                margin: 0 auto;
+                height: 100%;
+                width: calc(100% - 1.5rem);
                 display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
                 align-items: center;
-                gap: unset;
-
-                position: fixed;
-                top: 0px;
-                right: -15rem;
-                /* change if menu list width change */
-                transition: transform 0.3s ease-in-out;
+                justify-content: space-between;
             }
 
-            .navbar .nav__ref .nav__list a {
+            /* ================ Navigation Styles ================ */
+            .nav-container {
+                position: relative;
+            }
+
+            .navbar {
+                height: 100vh;
+                width: 14rem;
+                background-color: var(--white);
+                border-right: var(--gray-border);
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                transform: translateX(-100%);
+                transition: transform var(--transition-speed);
+            }
+
+            .nav-list {
                 width: 100%;
                 height: 5rem;
-                border-bottom: 0.05rem solid var(--text-color-body);
-
+                font-size: 0.8rem;
                 display: flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: var(--gray-border);
+                transition: background-color 0.2s ease;
+            }
+
+            .nav-list:hover {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+
+            .menu-close-container {
+                height: 3.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                border-bottom: var(--gray-border);
+            }
+
+            .menu-icon {
+                margin-right: 1rem;
+                padding: 0.5rem;
+                font-size: 1.5rem;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            }
+
+            .menu-icon:hover {
+                transform: scale(1.1);
+            }
+
+            /* ================ Header Right Section ================ */
+            .header-right-section {
+                height: 100%;
+                width: max-content;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .profile {
+                margin-right: 1rem;
+                padding: 0.5rem 1.875rem;
+                color: var(--black);
+                border: 0.125rem solid var(--primary-color);
+                border-radius: 1rem;
+                font-size: 0.875rem;
+                transition: opacity 0.2s ease;
+            }
+
+            .login-btn,
+            .logout-btn {
+                padding: 0.5rem 1.875rem;
+                background-color: var(--primary-color);
+                color: var(--black);
+                border-radius: 1rem;
+                font-size: 0.875rem;
+                transition: opacity 0.2s ease;
+            }
+
+            .login-btn:hover,
+            .logout-btn:hover {
+                opacity: 0.9;
+            }
+
+            /* ================ Main Content ================ */
+            main {
+                padding: 0rem;
+            }
+
+            .content {
+                margin-top: 3rem;
+                display: flex;
+                flex-flow: column wrap;
                 justify-content: center;
                 align-items: center;
-
-                transition: box-shadow 0.3s ease-in-out;
             }
 
-            .navbar .nav__ref .nav__list a:visited,
-            .navbar .nav__ref .nav__list a:active {
-                color: initial;
-                /* Ensure the link doesn't change color after visiting */
-                text-decoration: none;
-                /* Ensure no underline after clicking */
+            .heading {
+                font-weight: 600;
+                font-size: 2rem;
+                letter-spacing: 0rem;
+                text-align: center;
             }
 
-            .navbar .nav__ref .nav__list a:hover {
-                box-shadow: 0rem 0rem 0.3rem 0.275rem rgba(0, 0, 0, 0.1) inset;
+            .form {
+                margin-top: 1.875rem;
+                padding: 1.6rem 2rem 1.4rem 2rem;
+                width: 20rem;
+                background-color: var(--secondary-color);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                gap: 1rem;
+                border-radius: 0.3rem;
+                border: 0.0625rem solid var(--black);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .input-container {
+                width: 90%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .input-container label {
+                font-size: 0.875rem;
+                font-weight: 600;
+            }
+            .input-container input,
+            .input-container select {
+                padding: 0.375rem;
+                width: 5rem;
+                background-color: var(--white);
+                border: 0.0625rem solid var(--gray-border);
+                border-radius: 0.125rem;
             }
 
-            .navbar .nav__ref .nav__list>i {
-                color: var(--text-color-body);
-                padding: 1rem 1rem;
-
-                position: absolute;
-                top: 0px;
-                left: 0px;
+            .form button {
+                background-color: var(--white);
+                color: var(--black);
+                margin-top: 0.75rem;
+                padding: 0.5rem 5.7rem;
+                font-size: 0.875rem;
+                border-radius: 1rem;
+                border: 0.0625 solid var(--black);
+                cursor: pointer;
+                transition: all 0.3s ease;
             }
-
-            .navbar .nav__ref .nav__list a span {
-                display: block;
+            .form button:hover {
+                opacity: 80%;
             }
+        </style>
+    </head>
 
-            .navbar .nav__ref .nav__list a span:hover {
-                background-color: initial;
-                color: var(--text-color-body);
-            }
-        }
+    <body>
+        <!-- Header Section -->
+        <header>
+            <div class="header-container">
+                <!-- Navigation Container -->
+                <div class="nav-container">
+                    <i id="menu-open" class="fas fa-bars menu-icon"></i>
+                    <nav class="navbar" id="navbar">
+                        <div class="menu-close-container">
+                            <i id="menu-close" class="fas fa-times menu-icon"></i>
+                        </div>
+                        <a class="nav-list" href="#">HOME</a>
+                        <a class="nav-list" href="#">CROP RECOMMENDATION</a>
+                        <a class="nav-list" href="#">FERTILIZER RECOMMENDATION</a>
+                        <a class="nav-list" href="#">DISEASE DETECTION</a>
+                        <a class="nav-list" href="#">ABOUT</a>
+                    </nav>
+                </div>
 
-        /* ===================== FORM ===================== */
-        .form-container {
-            margin-top: 6.75rem;
-            height: 100%;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        form {
-            padding: 2rem;
-            width: 24rem;
-            height: 18rem;
-            background-color: var(--bg-color-form);
-            color: var(--text-color-body);
-            border-radius: 4px;
-            border: 0.0125rem solid rgba(0, 0, 0, 0.4);
-            box-shadow: 0px 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-        }
-
-        .form_lable{
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            text-align: center;
-            text-decoration: var(--text-color-body) solid underline;
-        }
-
-        .input-container {
-            width: 80%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        input,
-        select {
-            height: 100%;
-            width: 7rem;
-            padding: 0.125rem 0rem 0.125rem 0.5rem;
-            background-color: white;
-            
-            color: var(--text-color-body);
-            border: 0.063rem solid rgba(0, 0, 0, 0.4);
-            border-radius: 0.125rem;
-        }
-
-        button {
-            background-color: var(--bg-color-btn1);
-            color: white;
-            padding: 0.5rem 1.725rem;
-            border: none;
-            border-radius: 0.5rem;
-            box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            /* transition: background-color 0.3s ease, box-shadow 0.3s ease; */
-            transition: all 0.3s ease;
-            position: relative;
-            top: 0.6rem;
-        }
-
-        button:hover {
-            background-color: var(--bg-color-btn2);
-            /* Change color on hover */
-            /* color: #62be1f; */
-            box-shadow: 0px 0.3rem 0.6rem rgba(0, 0, 0, 0.2);
-            /* Darker shadow on hover */
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <a id="b-name" href="#">Next generation agriculture</a>
-            <a id="b-name-short" href="#">Nga</a>
-        </div>
-        <div class="nav__ref">
-            <div id="menu" class="nav__list">
-                <i id="menu-close" class="icon fa-solid fa-bars"></i>
-                <a href="#"><span>Home</span></a>
-                <a href="#"><span>Crop recommendation</span></a>
-                <a href="#"><span>Fertilizer recommendation</span></a>
-                <a href="#"><span>Disease detection</span></a>
-                <a href="#"><span>About</span></a>
+                <!--Right Section of Header-->
+                <div class="header-right-section">
+                    <div class="before-login">
+                        <a href="#" class="login-btn">LOG IN</a>
+                    </div>
+                    <div class="after-login" style="display: none">
+                        <a href="#" class="profile">PROFILE</a>
+                        <a href="#" class="logout-btn">LOG OUT</a>
+                    </div>
+                </div>
             </div>
+        </header>
 
-            <div class="nav__action">
-                <i class="icon fa-regular fa-user"></i>
-                <i id="menu-open" class="icon fa-solid fa-bars"></i>
+        <!-- Main Content -->
+        <main>
+            <div class="content">
+                <div class="heading">Fertilizer Recommendation</div>
+                <form
+                    class="form"
+                    method="post"
+                    target="_blank"
+                    action="http://localhost:8000/api/disease_detection"
+                    enctype="multipart/form-data"
+                >
+                    <div class="input-container">
+                        <label for="img">Upload Image</label>
+                        <input type="file" name="img" step="any" id="" required />
+                    </div>
+                    <div class="input-container">
+                        <label for="crop">Crop name</label>
+                        <select name="cropy" id="crop-options-list" required>
+                            <!-- =======================generated through JavaScript======================= -->
+                            <!-- <option value="s">--options--</option> -->
+                        </select>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
-        </div>
-    </nav>
-    <div class="form-container">
-        <form method="post" target="_blank" action="http://localhost:8000/api/disease_detection" enctype="multipart/form-data">
-            <h2 class="form_lable">Disease Detection</h2>
-            <div class="input-container">
-                <label for="img">Upload Image</label>
-                <input type="file" name="img" step="any" id="" required />
-            </div>
-            <div class="input-container">
-                <label for="crop">Crop name</label>
-                <select name="crop" id="crop-options-list" required>
-                    <!-- =======================generated through JavaScript======================= -->
-                    <!-- <option value="s">--options--</option> -->
+        </main>
 
-                </select>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-</body>
-<script>
-    //===================== Menu btn open&close =====================
-    let open = document.getElementById("menu-open");
-    let close = document.getElementById("menu-close");
-    let menu = document.getElementById("menu");
-    open.addEventListener("click", () => {
-        menu.style.transform = "translateX(-100%)";
-    });
-    close.addEventListener("click", () => {
-        menu.style.transform = "translateX(0%)";
-    });
-    //===================== Input List Generator =====================
-    let dataListTag = document.getElementById("crop-options-list");
-    let cropNames = ['apple', 'banana'];
-    let list = "";
-    function generateInputList() {
-        cropNames.forEach((element) => {
-            list += `<option value="${element}">${element}</option>\t`;
-        });
-        dataListTag.innerHTML = list;
-    }
+        <script>
+            // Menu Toggle Functionality
+            const menu = document.getElementById("navbar");
+            const openBtn = document.getElementById("menu-open");
+            const closeBtn = document.getElementById("menu-close");
+            openBtn.addEventListener("click", () => {
+                menu.style.transform = "translateX(0)";
+            });
+            closeBtn.addEventListener("click", () => {
+                menu.style.transform = "translateX(-100%)";
+            });
+            // Close menu when clicking outside
+            document.addEventListener("click", (e) => {
+                if (!menu.contains(e.target) && e.target !== openBtn) {
+                    menu.style.transform = "translateX(-100%)";
+                }
+            });
 
+            //===================== Input List Generator =====================
+            let dataListTag = document.getElementById("crop-options-list");
+            const cropNames = [
+                "Barley",
+                "Cotton",
+                "Ground Nuts",
+                "Maize",
+                "Millets",
+                "Oil seeds",
+                "Paddy",
+                "Pulses",
+                "Sugarcane",
+                "Tobacco",
+                "Wheat",
+            ];
 
-    //===================== On load =====================    
-    document.addEventListener("DOMContentLoaded", () => {
-        generateInputList()
-    });
-</script>
+            let list = "";
+            function generateInputList() {
+                cropNames.forEach((element) => {
+                    list += `<option value="${element}">${element}</option>\t`;
+                });
+                dataListTag.innerHTML = list;
+            }
 
+            //===================== On load =====================
+            document.addEventListener("DOMContentLoaded", () => {
+                generateInputList();
+            });
+
+            //LogIN LogOUT Swithch
+        </script>
+    </body>
 </html>
