@@ -5,14 +5,16 @@ import { Fertilizer } from "../models/fertilizer.model.js";
 
 const fertilizerRecommendation = asyncHandler(async (req, res) => {
   // const { nitrogen, phosphorus, potassium, temperature, humidity, crop_name } = req.body;
-  const { nitrogen, phosphorus, potassium, ph, temperature, crop_name } = req.body;  
+  const { nitrogen, phosphorus, potassium, ph,humidity,moisture, temperature,soil_type, crop_name } = req.body;  
 
   //check for required fields
   if (!nitrogen) throw new ApiError(401, "Enter the Nitrogen value");
   if (!phosphorus) throw new ApiError(401, "Enter the Phosphorus value");
   if (!potassium) throw new ApiError(401, "Enter the Potassium value");
-  if (!ph) throw new ApiError(401, "Enter the pH value");
+  if (!humidity) throw new ApiError(401, "Enter the humidity value");
+  if (!moisture) throw new ApiError(401, "Enter the moisture value");
   if (!temperature) throw new ApiError(401, "Enter the Temperature value");
+  if (!soil_type) throw new ApiError(401, "Enter the Soil type");
   if (!crop_name) throw new ApiError(401, "Enter the Crop name");
 
   //Connect and get data from Python Code within "script" by sending the inputs
@@ -20,10 +22,13 @@ const fertilizerRecommendation = asyncHandler(async (req, res) => {
     nitrogen,
     phosphorus,
     potassium,
-    ph,
+    humidity,
+    moisture,
     temperature,
+    soil_type,
     crop_name,
   ]);
+
 
   //Fetch Data From DataBase
     const fertilizerData = await Fertilizer.findOne({ fertilizerName: result.toLowerCase() });

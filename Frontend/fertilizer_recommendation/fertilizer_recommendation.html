@@ -268,25 +268,37 @@
                     action="http://localhost:8000/api/fertilizer_recommendation"
                 >
                     <div class="input-container">
-                        <label for="nitrogen">Nitrogen</label>
+                        <label for="nitrogen">Nitrogen (kg/ha)</label>
                         <input type="number" name="nitrogen" step="any" id="" required />
                     </div>
                     <div class="input-container">
-                        <label for="phosphorus">Phosphorus</label>
+                        <label for="phosphorus">Phosphorus (kg/ha)</label>
                         <input type="number" name="phosphorus" step="any" id="" required />
                     </div>
                     <div class="input-container">
-                        <label for="potassium">Potassium</label>
+                        <label for="potassium">Potassium (kg/ha)</label>
                         <input type="number" name="potassium" step="any" id="" required />
                     </div>
                     <div class="input-container">
-                        <label for="ph">pH</label>
-                        <input type="number" name="ph" step="any" id="" required />
+                        <label for="humidity">Humidity (%)</label>
+                        <input type="number" name="humidity" step="any" id="" required />
                     </div>
                     <div class="input-container">
-                        <label for="temperature">Temperature</label>
+                        <label for="moisture">Moisture (%)</label>
+                        <input type="number" name="moisture" step="any" id="" required />
+                    </div>
+                    <div class="input-container">
+                        <label for="temperature">Temperature (°C)</label>
                         <input type="number" name="temperature" step="any" id="" required />
                     </div>
+                    <div class="input-container">
+                        <label for="soil_type">Soil type</label>
+                        <select name="soil_type" id="soil-options-list" required>
+                            <!-- =======================generated through JavaScript======================= -->
+                            <!-- <option value="s">--options--</option> -->
+                        </select>
+                    </div>
+                    
                     <div class="input-container">
                         <label for="crop_name">Crop name</label>
                         <select name="crop_name" id="crop-options-list" required>
@@ -318,7 +330,8 @@
             });
 
             //===================== Input List Generator =====================
-            let dataListTag = document.getElementById("crop-options-list");
+            //for crop type
+            let cropDataListTag = document.getElementById("crop-options-list");
             const cropNames = [
                 "Barley",
                 "Cotton",
@@ -333,17 +346,28 @@
                 "Wheat",
             ];
 
-            let list = "";
-            function generateInputList() {
+            let listCrop = "";
+            function generateCropInputList() {
                 cropNames.forEach((element) => {
-                    list += `<option value="${element}">${element}</option>\t`;
+                    listCrop += `<option value="${element}">${element}</option>\t`;
                 });
-                dataListTag.innerHTML = list;
+                cropDataListTag.innerHTML = listCrop;
             }
-
+            //for soil type
+            let soilDataListTag = document.getElementById("soil-options-list");
+            const soilNames = [ 'Black', 'Clayey', 'Loamy', 'Red', 'Sandy' ];
+            let listSoil = "";
+            function generateSoilInputList() {
+                soilNames.forEach((element) => {
+                    listSoil += `<option value="${element}">${element}</option>\t`;
+                });
+                soilDataListTag.innerHTML = listSoil;
+            }
+            
             //===================== On load =====================
             document.addEventListener("DOMContentLoaded", () => {
-                generateInputList();
+                generateCropInputList();
+                generateSoilInputList();
             });
 
             //LogIN LogOUT Swithch
