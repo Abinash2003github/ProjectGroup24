@@ -1,6 +1,7 @@
 import asyncHandler from "../utils/asyncHandler.js";
 import ApiError from "../utils/ApiError.js";
 import runPy from "../utils/ApiRunPy.js";
+import { Fertilizer } from "../models/fertilizer.model.js";
 
 const fertilizerRecommendation = asyncHandler(async (req, res) => {
   // const { nitrogen, phosphorus, potassium, temperature, humidity, crop_name } = req.body;
@@ -12,7 +13,6 @@ const fertilizerRecommendation = asyncHandler(async (req, res) => {
   if (!potassium) throw new ApiError(401, "Enter the Potassium value");
   if (!ph) throw new ApiError(401, "Enter the pH value");
   if (!temperature) throw new ApiError(401, "Enter the Temperature value");
-  // if (!humidity) throw new ApiError(401, "Enter the Humidity value");
   if (!crop_name) throw new ApiError(401, "Enter the Crop name");
 
   //Connect and get data from Python Code within "script" by sending the inputs
@@ -22,13 +22,23 @@ const fertilizerRecommendation = asyncHandler(async (req, res) => {
     potassium,
     ph,
     temperature,
-    // humidity,
     crop_name,
   ]);
+
+  //Fetch Data From DataBase
+    const fertilizerData = await Fertilizer.findOne({ fertilizerName: result.toLowerCase() });
+    if (!fertilizerData) {
+      throw new ApiError(500, "Data Not Found!!!");
+    }
 
   //Store recived data in object
   const data = {
     fertilizerName: result,
+    nitrogen: fertilizerData.N,
+    phosphorus: fertilizerData.P,
+    potassium: fertilizerData.K,
+    ph: fertilizerData.ph,
+    temperature: fertilizerData.temperature,
   };
 
   //Send respond

@@ -1,14 +1,11 @@
 import mongoose from "mongoose";
 
 const cropsSchema = new mongoose.Schema({
-  customId: {
-    type: String,
-    required: true,
-    unique: true,
-  },
   cropName: {
     type: String,
     required: true,
+    unique: true,
+    lowercase: true,
   },
   N: {
     type: [Number],
@@ -22,14 +19,18 @@ const cropsSchema = new mongoose.Schema({
     type: [Number],
     required: true,
   },
-  moisture: {
+  temperature: {
     type: [Number],
     required: true,
   },
-  PH: {
+  
+  humidity: {
     type: [Number],
     required: true,
-    enum: [1, 2, 3, 4, 5, 6, 7],
+  },
+  ph: {
+    type: [Number],
+    required: true,
   },
   rainfall: {
     type: [Number],
