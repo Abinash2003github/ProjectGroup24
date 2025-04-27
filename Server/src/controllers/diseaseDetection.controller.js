@@ -1,25 +1,38 @@
 import asyncHandler from "../utils/asyncHandler.js";
 import ApiError from "../utils/ApiError.js";
-import ApiResponse from "../utils/ApiResponse.js";
-import path from 'path';
+import runPy from "../utils/ApiRunPy.js";
+import { CropDisease } from "../models/crop_disease.mondel.js";
+import path from "path";
 
 // Create a helper function to mimic __dirname
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
 const diseaseDetection = asyncHandler(async (req, res) => {
-  const imagePath = req.file.path
-    .replace(/.*public/, ''); // Remove everything before /public
-  const des= "Apple Cedar Apple Rust is a fungal disease that affects apple trees and needs both apple and cedar (or juniper) trees to spread. It causes yellow-orange spots on apple leaves, which can lead to leaf damage and poor fruit growth. To control it, remove nearby cedar trees, use fungicides in early spring, prune infected parts, and plant disease-resistant apple varieties. Keeping trees healthy also helps protect them from the disease."
-  const cu="Managing Apple Cedar Apple Rust involves several steps. Removing nearby cedar or juniper trees can help break the disease cycle. Applying fungicides like myclobutanil or propiconazole during early spring protects new leaves from infection. Regular pruning of infected leaves and branches helps limit the spread. Planting rust-resistant apple varieties and maintaining healthy tree care practices, such as proper watering and fertilization, also strengthen the tree's natural defenses against the disease."
+  const imagePath = req.file?.path?.replace(/\\/g, "/"); // Convert "\aa\b\img.jpg" to "/aa/b/img.jpg"
+  const imagePathRelative = imagePath.replace(/.*public/, ""); //Remove everything before /public and
+
+  //check for required fields
+  if (!imagePath) throw new ApiError(401, "Enter the leaf image!");
+
+  //Connect and get data from Python Code within "script" by sending the inputs
+  const result = await runPy("diseasePredction.py", [imagePath]);
+
+  //Fetch Data From DataBase
+  const cropDiseaseData = await CropDisease.findOne({ nameId: result.toString().trim() });
+  if (!cropDiseaseData) {
+    throw new ApiError(500, "Data Not Found!!!");
+  }
+
+  //Store recived data in object
   const data = {
-    diseaseName: "Apple Cedar Apple Rust",
-    diseaseDescription: des,
-    diseaseCure: cu,
-    diseaseImage: imagePath
+    diseaseName: cropDiseaseData.name,
+    diseaseDescription: cropDiseaseData.description,
+    diseaseCure: cropDiseaseData.cure,
+    diseaseImage: imagePathRelative,
   };
+
   //send respond
   res.status(201).render("disease_detection/disease_detection-result", data); // Render HTML
 });

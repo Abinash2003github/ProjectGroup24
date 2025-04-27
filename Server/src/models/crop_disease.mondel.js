@@ -1,11 +1,10 @@
 import mongoose from "mongoose";
 
 const cropDiseaseSchema = new mongoose.Schema({
-  _id: {
+  nameId: {
     type: String,
     required: true,
     unique: true,
-    lowercase: true,
   },
   name: {
     type: String,
