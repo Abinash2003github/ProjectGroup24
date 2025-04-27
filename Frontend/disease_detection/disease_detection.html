@@ -240,8 +240,7 @@
                         <a class="nav-list" href="#">HOME</a>
                         <a class="nav-list" href="#">CROP RECOMMENDATION</a>
                         <a class="nav-list" href="#">FERTILIZER RECOMMENDATION</a>
-                        <a class="nav-list" href="#">DISEASE DETECTION</a>
-                        <a class="nav-list" href="#">ABOUT</a>
+                        <a class="nav-list" href="#">Disease Prediction</a>
                     </nav>
                 </div>
 
@@ -261,7 +260,7 @@
         <!-- Main Content -->
         <main>
             <div class="content">
-                <div class="heading">Fertilizer Recommendation</div>
+                <div class="heading">Disease Prediction</div>
                 <form
                     class="form"
                     method="post"
@@ -272,13 +271,6 @@
                     <div class="input-container">
                         <label for="img">Upload Image</label>
                         <input type="file" name="img" step="any" id="" required />
-                    </div>
-                    <div class="input-container">
-                        <label for="crop">Crop name</label>
-                        <select name="cropy" id="crop-options-list" required>
-                            <!-- =======================generated through JavaScript======================= -->
-                            <!-- <option value="s">--options--</option> -->
-                        </select>
                     </div>
                     <button type="submit">Submit</button>
                 </form>
@@ -304,33 +296,33 @@
             });
 
             //===================== Input List Generator =====================
-            let dataListTag = document.getElementById("crop-options-list");
-            const cropNames = [
-                "Barley",
-                "Cotton",
-                "Ground Nuts",
-                "Maize",
-                "Millets",
-                "Oil seeds",
-                "Paddy",
-                "Pulses",
-                "Sugarcane",
-                "Tobacco",
-                "Wheat",
-            ];
+            // let dataListTag = document.getElementById("crop-options-list");
+            // const cropNames = [
+            //     "Barley",
+            //     "Cotton",
+            //     "Ground Nuts",
+            //     "Maize",
+            //     "Millets",
+            //     "Oil seeds",
+            //     "Paddy",
+            //     "Pulses",
+            //     "Sugarcane",
+            //     "Tobacco",
+            //     "Wheat",
+            // ];
 
-            let list = "";
-            function generateInputList() {
-                cropNames.forEach((element) => {
-                    list += `<option value="${element}">${element}</option>\t`;
-                });
-                dataListTag.innerHTML = list;
-            }
+            // let list = "";
+            // function generateInputList() {
+            //     cropNames.forEach((element) => {
+            //         list += `<option value="${element}">${element}</option>\t`;
+            //     });
+            //     dataListTag.innerHTML = list;
+            // }
 
-            //===================== On load =====================
-            document.addEventListener("DOMContentLoaded", () => {
-                generateInputList();
-            });
+            // //===================== On load =====================
+            // document.addEventListener("DOMContentLoaded", () => {
+            //     generateInputList();
+            // });
 
             //LogIN LogOUT Swithch
         </script>
