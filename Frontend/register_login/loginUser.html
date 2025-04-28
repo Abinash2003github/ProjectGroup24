@@ -13,7 +13,7 @@
             referrerpolicy="no-referrer"
         />
 
-        <title>Registration | NextGen Agriculture</title>
+        <title>LogIn | NextGen Agriculture</title>
         <style>
             /* ================ CSS Variables ================ */
             :root {
@@ -284,18 +284,17 @@
                         <div class="menu-close-container">
                             <i id="menu-close" class="fas fa-times menu-icon"></i>
                         </div>
-                        <a class="nav-list" href="#">HOME</a>
-                        <a class="nav-list" href="#">CROP RECOMMENDATION</a>
-                        <a class="nav-list" href="#">FERTILIZER RECOMMENDATION</a>
-                        <a class="nav-list" href="#">DISEASE DETECTION</a>
-                        <a class="nav-list" href="#">ABOUT</a>
+                        <a class="nav-list" href="http://localhost:8000/api/home">HOME</a>
+                        <a class="nav-list" href="http://localhost:8000/api/crops_recommendation">CROP RECOMMENDATION</a>
+                        <a class="nav-list" href="http://localhost:8000/api/fertilizer_recommendation">FERTILIZER RECOMMENDATION</a>
+                        <a class="nav-list" href="http://localhost:8000/api/disease_detection">DISEASE DETECTION</a>
                     </nav>
                 </div>
 
                 <!--Right Section of Header-->
                 <div class="header-right-section">
                     <div class="before-login">
-                        <a href="#" class="login-btn">LOG IN</a>
+                        <a href="http://localhost:8000/api/login" class="login-btn">LOG IN</a>
                     </div>
                     <div class="after-login" style="display: none">
                         <a href="#" class="profile">PROFILE</a>
@@ -332,7 +331,7 @@
                         </div>
                     </div>
                     <button class="submit" type="submit">Submit</button>
-                    <p class="log-ref">Don't have an account? <a href="">Sign up</a> here!</p>
+                    <p class="log-ref">Don't have an account? <a href="http://localhost:8000/api/register">Sign up</a> here!</p>
                 </form>
             </div>
         </main>

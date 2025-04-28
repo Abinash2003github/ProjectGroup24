@@ -16,22 +16,28 @@ import { diseaseDetection } from "../controllers/diseaseDetection.controller.js"
 import { verifyJWT } from "../middlewares/auth.middlewares.js";
 import { upload } from "../middlewares/multer.middlewares.js";
 
+//========= Secure Routes For Register, Log in, Log out ===============
 router
   .route("/register")
   .get((req, res) => {
-    res.status(200).send("<h1>/register is Working...<h1>");
+    res.sendFile(path.join(__dirname, "../../../Frontend/register_login/registerUser.html"));
   })
   .post(createUser);
 
 router
   .route("/login")
   .get((req, res) => {
-    res.status(200).send("<h1>/login is Working...</h1>");
+    res.sendFile(path.join(__dirname, "../../../Frontend/register_login/loginUser.html"));
   })
   .post(logInUser);
 
-//secure routes
-router.route("/logout").post(verifyJWT, logOutUser);
+router
+  .route("/logout")
+  .post(verifyJWT, logOutUser);
+
+router.route("/home").get((req, res) => {
+  res.sendFile(path.join(__dirname, "../../../Frontend/home/NextGen_Agriculture.html"));
+});
 
 //render template [use  "path.join(__dirname,"../../../Frontend")" to access files from Frontend ]
 router
