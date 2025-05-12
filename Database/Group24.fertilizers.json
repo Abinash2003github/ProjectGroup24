@@ -1,0 +1,98 @@
+[{
+  "_id": {
+    "$oid": "680c7c6cb0699fa19a4191da"
+  },
+  "fertilizerName": "urea",
+  "N": 46,
+  "P": 0,
+  "K": 0,
+  "ph": 7,
+  "temperature": [
+    15,
+    35
+  ]
+},
+{
+  "_id": {
+    "$oid": "680c7c6cb0699fa19a4191db"
+  },
+  "fertilizerName": "dap",
+  "N": 18,
+  "P": 46,
+  "K": 0,
+  "ph": 7.5,
+  "temperature": [
+    10,
+    30
+  ]
+},
+{
+  "_id": {
+    "$oid": "680c7c6cb0699fa19a4191dc"
+  },
+  "fertilizerName": "14-35-14",
+  "N": 14,
+  "P": 35,
+  "K": 14,
+  "ph": 6.5,
+  "temperature": [
+    15,
+    35
+  ]
+},
+{
+  "_id": {
+    "$oid": "680c7c6cb0699fa19a4191dd"
+  },
+  "fertilizerName": "28-28",
+  "N": 28,
+  "P": 28,
+  "K": 0,
+  "ph": 6.8,
+  "temperature": [
+    15,
+    35
+  ]
+},
+{
+  "_id": {
+    "$oid": "680c7c6cb0699fa19a4191de"
+  },
+  "fertilizerName": "17-17-17",
+  "N": 17,
+  "P": 17,
+  "K": 17,
+  "ph": 6.5,
+  "temperature": [
+    15,
+    35
+  ]
+},
+{
+  "_id": {
+    "$oid": "680c7c6cb0699fa19a4191df"
+  },
+  "fertilizerName": "20-20",
+  "N": 20,
+  "P": 20,
+  "K": 0,
+  "ph": 6.8,
+  "temperature": [
+    15,
+    35
+  ]
+},
+{
+  "_id": {
+    "$oid": "680c7c6cb0699fa19a4191e0"
+  },
+  "fertilizerName": "10-26-26",
+  "N": 10,
+  "P": 26,
+  "K": 26,
+  "ph": 6.5,
+  "temperature": [
+    15,
+    35
+  ]
+}]

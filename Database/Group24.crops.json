@@ -1,0 +1,770 @@
+[{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df13d"
+  },
+  "cropName": "rice",
+  "N": [
+    50,
+    100
+  ],
+  "P": [
+    30,
+    60
+  ],
+  "K": [
+    40,
+    80
+  ],
+  "temperature": [
+    20,
+    35
+  ],
+  "humidity": [
+    60,
+    85
+  ],
+  "ph": [
+    5,
+    7
+  ],
+  "rainfall": [
+    225,
+    375
+  ],
+  "growing_period": 120
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df13e"
+  },
+  "cropName": "maize",
+  "N": [
+    80,
+    120
+  ],
+  "P": [
+    40,
+    70
+  ],
+  "K": [
+    50,
+    90
+  ],
+  "temperature": [
+    18,
+    32
+  ],
+  "humidity": [
+    50,
+    75
+  ],
+  "ph": [
+    5.5,
+    7.5
+  ],
+  "rainfall": [
+    125,
+    200
+  ],
+  "growing_period": 90
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df13f"
+  },
+  "cropName": "chickpea",
+  "N": [
+    20,
+    50
+  ],
+  "P": [
+    30,
+    60
+  ],
+  "K": [
+    30,
+    60
+  ],
+  "temperature": [
+    15,
+    30
+  ],
+  "humidity": [
+    40,
+    60
+  ],
+  "ph": [
+    6,
+    7.5
+  ],
+  "rainfall": [
+    75,
+    125
+  ],
+  "growing_period": 100
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df140"
+  },
+  "cropName": "kidneybeans",
+  "N": [
+    30,
+    60
+  ],
+  "P": [
+    40,
+    70
+  ],
+  "K": [
+    50,
+    80
+  ],
+  "temperature": [
+    18,
+    27
+  ],
+  "humidity": [
+    45,
+    65
+  ],
+  "ph": [
+    6,
+    7
+  ],
+  "rainfall": [
+    100,
+    150
+  ],
+  "growing_period": 110
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df141"
+  },
+  "cropName": "pigeonpeas",
+  "N": [
+    25,
+    50
+  ],
+  "P": [
+    30,
+    60
+  ],
+  "K": [
+    40,
+    70
+  ],
+  "temperature": [
+    20,
+    30
+  ],
+  "humidity": [
+    50,
+    70
+  ],
+  "ph": [
+    5.5,
+    7
+  ],
+  "rainfall": [
+    100,
+    167
+  ],
+  "growing_period": 150
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df142"
+  },
+  "cropName": "mothbeans",
+  "N": [
+    20,
+    40
+  ],
+  "P": [
+    20,
+    50
+  ],
+  "K": [
+    30,
+    60
+  ],
+  "temperature": [
+    25,
+    35
+  ],
+  "humidity": [
+    40,
+    60
+  ],
+  "ph": [
+    6.5,
+    7.5
+  ],
+  "rainfall": [
+    100,
+    167
+  ],
+  "growing_period": 80
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df143"
+  },
+  "cropName": "mungbean",
+  "N": [
+    20,
+    50
+  ],
+  "P": [
+    30,
+    60
+  ],
+  "K": [
+    30,
+    60
+  ],
+  "temperature": [
+    25,
+    35
+  ],
+  "humidity": [
+    50,
+    70
+  ],
+  "ph": [
+    6,
+    7.5
+  ],
+  "rainfall": [
+    133,
+    200
+  ],
+  "growing_period": 60
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df144"
+  },
+  "cropName": "blackgram",
+  "N": [
+    25,
+    50
+  ],
+  "P": [
+    30,
+    60
+  ],
+  "K": [
+    40,
+    70
+  ],
+  "temperature": [
+    25,
+    35
+  ],
+  "humidity": [
+    50,
+    70
+  ],
+  "ph": [
+    6,
+    7.5
+  ],
+  "rainfall": [
+    125,
+    200
+  ],
+  "growing_period": 90
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df145"
+  },
+  "cropName": "lentil",
+  "N": [
+    20,
+    40
+  ],
+  "P": [
+    30,
+    60
+  ],
+  "K": [
+    30,
+    60
+  ],
+  "temperature": [
+    15,
+    25
+  ],
+  "humidity": [
+    40,
+    60
+  ],
+  "ph": [
+    6,
+    7
+  ],
+  "rainfall": [
+    88,
+    138
+  ],
+  "growing_period": 110
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df146"
+  },
+  "cropName": "pomegranate",
+  "N": [
+    50,
+    100
+  ],
+  "P": [
+    40,
+    80
+  ],
+  "K": [
+    60,
+    120
+  ],
+  "temperature": [
+    20,
+    35
+  ],
+  "humidity": [
+    50,
+    70
+  ],
+  "ph": [
+    5.5,
+    7
+  ],
+  "rainfall": [
+    83,
+    133
+  ],
+  "growing_period": 180
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df147"
+  },
+  "cropName": "banana",
+  "N": [
+    100,
+    150
+  ],
+  "P": [
+    50,
+    100
+  ],
+  "K": [
+    150,
+    200
+  ],
+  "temperature": [
+    20,
+    30
+  ],
+  "humidity": [
+    60,
+    80
+  ],
+  "ph": [
+    5.5,
+    7
+  ],
+  "rainfall": [
+    133,
+    222
+  ],
+  "growing_period": 270
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df148"
+  },
+  "cropName": "mango",
+  "N": [
+    60,
+    120
+  ],
+  "P": [
+    40,
+    80
+  ],
+  "K": [
+    80,
+    150
+  ],
+  "temperature": [
+    24,
+    32
+  ],
+  "humidity": [
+    50,
+    70
+  ],
+  "ph": [
+    5.5,
+    7.5
+  ],
+  "rainfall": [
+    167,
+    250
+  ],
+  "growing_period": 120
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df149"
+  },
+  "cropName": "grapes",
+  "N": [
+    50,
+    100
+  ],
+  "P": [
+    40,
+    80
+  ],
+  "K": [
+    100,
+    150
+  ],
+  "temperature": [
+    15,
+    35
+  ],
+  "humidity": [
+    50,
+    70
+  ],
+  "ph": [
+    5.5,
+    7
+  ],
+  "rainfall": [
+    83,
+    150
+  ],
+  "growing_period": 150
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df14a"
+  },
+  "cropName": "watermelon",
+  "N": [
+    50,
+    100
+  ],
+  "P": [
+    40,
+    80
+  ],
+  "K": [
+    60,
+    120
+  ],
+  "temperature": [
+    22,
+    35
+  ],
+  "humidity": [
+    60,
+    80
+  ],
+  "ph": [
+    6,
+    7
+  ],
+  "rainfall": [
+    133,
+    200
+  ],
+  "growing_period": 80
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df14b"
+  },
+  "cropName": "muskmelon",
+  "N": [
+    50,
+    100
+  ],
+  "P": [
+    40,
+    80
+  ],
+  "K": [
+    60,
+    120
+  ],
+  "temperature": [
+    20,
+    30
+  ],
+  "humidity": [
+    50,
+    70
+  ],
+  "ph": [
+    6,
+    7
+  ],
+  "rainfall": [
+    100,
+    167
+  ],
+  "growing_period": 70
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df14c"
+  },
+  "cropName": "apple",
+  "N": [
+    60,
+    120
+  ],
+  "P": [
+    40,
+    80
+  ],
+  "K": [
+    80,
+    150
+  ],
+  "temperature": [
+    10,
+    25
+  ],
+  "humidity": [
+    50,
+    70
+  ],
+  "ph": [
+    5.5,
+    7
+  ],
+  "rainfall": [
+    133,
+    200
+  ],
+  "growing_period": 150
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df14d"
+  },
+  "cropName": "orange",
+  "N": [
+    80,
+    150
+  ],
+  "P": [
+    50,
+    100
+  ],
+  "K": [
+    100,
+    180
+  ],
+  "temperature": [
+    15,
+    30
+  ],
+  "humidity": [
+    50,
+    70
+  ],
+  "ph": [
+    6,
+    7.5
+  ],
+  "rainfall": [
+    119,
+    179
+  ],
+  "growing_period": 210
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df14e"
+  },
+  "cropName": "papaya",
+  "N": [
+    80,
+    150
+  ],
+  "P": [
+    50,
+    100
+  ],
+  "K": [
+    100,
+    180
+  ],
+  "temperature": [
+    22,
+    35
+  ],
+  "humidity": [
+    60,
+    80
+  ],
+  "ph": [
+    6,
+    7
+  ],
+  "rainfall": [
+    125,
+    188
+  ],
+  "growing_period": 240
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df14f"
+  },
+  "cropName": "coconut",
+  "N": [
+    100,
+    200
+  ],
+  "P": [
+    50,
+    100
+  ],
+  "K": [
+    150,
+    250
+  ],
+  "temperature": [
+    25,
+    35
+  ],
+  "humidity": [
+    70,
+    90
+  ],
+  "ph": [
+    5,
+    8
+  ],
+  "rainfall": [
+    125,
+    208
+  ],
+  "growing_period": 365
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df150"
+  },
+  "cropName": "cotton",
+  "N": [
+    60,
+    120
+  ],
+  "P": [
+    40,
+    80
+  ],
+  "K": [
+    50,
+    100
+  ],
+  "temperature": [
+    20,
+    35
+  ],
+  "humidity": [
+    50,
+    70
+  ],
+  "ph": [
+    5.5,
+    7.5
+  ],
+  "rainfall": [
+    83,
+    133
+  ],
+  "growing_period": 180
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df151"
+  },
+  "cropName": "jute",
+  "N": [
+    40,
+    80
+  ],
+  "P": [
+    30,
+    60
+  ],
+  "K": [
+    40,
+    80
+  ],
+  "temperature": [
+    24,
+    37
+  ],
+  "humidity": [
+    60,
+    90
+  ],
+  "ph": [
+    6,
+    7.5
+  ],
+  "rainfall": [
+    208,
+    313
+  ],
+  "growing_period": 120
+},
+{
+  "_id": {
+    "$oid": "680c65f48ed0d284f67df152"
+  },
+  "cropName": "coffee",
+  "N": [
+    60,
+    100
+  ],
+  "P": [
+    30,
+    60
+  ],
+  "K": [
+    40,
+    80
+  ],
+  "temperature": [
+    15,
+    28
+  ],
+  "humidity": [
+    60,
+    80
+  ],
+  "ph": [
+    6,
+    6.5
+  ],
+  "rainfall": [
+    156,
+    260
+  ],
+  "growing_period": 240
+}]

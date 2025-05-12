@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "6719e3f7215fe877666a1c32"
+  },
+  "username": "john_doe",
+  "email": "john.doe@gmail.com",
+  "password": "$2b$10$PTjVwjAqj.ZTNEda8.LAtugKbqudV23RmkZ1eJJohLS3N0zZ/z5jS",
+  "firstname": "john",
+  "middlename": "michael",
+  "lastname": "doe",
+  "phone": [
+    1234567890,
+    9876543210
+  ],
+  "village": "Springfield",
+  "state": "Illinois",
+  "createdAt": {
+    "$date": "2024-10-24T06:06:47.376Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-24T14:09:40.618Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzE5ZTNmNzIxNWZlODc3NjY2YTFjMzIiLCJpYXQiOjE3Mjk3Nzg5ODAsImV4cCI6MTczMDY0Mjk4MH0.88b052gzRRP4G38lGZTy9jvrqNO7KQ9XHL_Ixtt2yow"
+}]

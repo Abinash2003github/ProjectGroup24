@@ -1,0 +1,342 @@
+[{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1bd"
+  },
+  "nameId": "Apple___Apple_scab",
+  "name": "Apple Apple scab",
+  "description": "Apple scab is a fungal disease causing dark, scabby lesions on apple leaves and fruit.",
+  "cure": "Apply fungicides in early spring and remove infected leaves."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1be"
+  },
+  "nameId": "Apple___Black_rot",
+  "name": "Apple Black rot",
+  "description": "Black rot is a fungal disease that creates dark, sunken spots on apple fruits and leaves.",
+  "cure": "Prune infected branches and use protective fungicide sprays."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1bf"
+  },
+  "nameId": "Apple___Cedar_apple_rust",
+  "name": "Apple Cedar apple rust",
+  "description": "Cedar apple rust causes orange spots on apple leaves and affects both apple and cedar trees.",
+  "cure": "Remove nearby cedar trees and apply spring fungicides."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1c0"
+  },
+  "nameId": "Apple___healthy",
+  "name": "Apple healthy",
+  "description": "The apple plant is healthy with no disease symptoms.",
+  "cure": "Maintain proper care and regular monitoring."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1c1"
+  },
+  "nameId": "Blueberry___healthy",
+  "name": "Blueberry healthy",
+  "description": "The blueberry plant is healthy and growing well.",
+  "cure": "Ensure good soil, proper watering, and pest management."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1c2"
+  },
+  "nameId": "Cherry_(including_sour)___Powdery_mildew",
+  "name": "Cherry Powdery mildew",
+  "description": "Powdery mildew appears as a white, powdery coating on cherry leaves and fruit.",
+  "cure": "Apply sulfur-based fungicides and prune infected parts."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1c3"
+  },
+  "nameId": "Cherry_(including_sour)___healthy",
+  "name": "Cherry healthy",
+  "description": "The cherry plant is healthy with no visible disease symptoms.",
+  "cure": "Continue proper watering, pruning, and pest control."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1c4"
+  },
+  "nameId": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+  "name": "Corn Cercospora leaf spot Gray leaf spot",
+  "description": "Gray leaf spot causes rectangular gray lesions on corn leaves, reducing yield.",
+  "cure": "Use resistant varieties and apply fungicides if needed."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1c5"
+  },
+  "nameId": "Corn_(maize)___Common_rust_",
+  "name": "Corn Common rust",
+  "description": "Common rust causes reddish-brown pustules on corn leaves.",
+  "cure": "Plant resistant corn varieties and apply fungicides."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1c6"
+  },
+  "nameId": "Corn_(maize)___Northern_Leaf_Blight",
+  "name": "Corn Northern Leaf Blight",
+  "description": "Northern Leaf Blight causes large gray-green lesions on corn leaves.",
+  "cure": "Use resistant hybrids and spray fungicides early."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1c7"
+  },
+  "nameId": "Corn_(maize)___healthy",
+  "name": "Corn healthy",
+  "description": "The corn plant is healthy with strong leaf and root growth.",
+  "cure": "Maintain balanced fertilization and pest prevention."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1c8"
+  },
+  "nameId": "Grape___Black_rot",
+  "name": "Grape Black rot",
+  "description": "Black rot creates dark spots on grape leaves, shoots, and fruits.",
+  "cure": "Prune infected parts and apply preventive fungicides."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1c9"
+  },
+  "nameId": "Grape___Esca_(Black_Measles)",
+  "name": "Grape Esca (Black Measles)",
+  "description": "Esca causes dark, scorched spots and fruit rot in grapevines.",
+  "cure": "Remove infected vines and avoid pruning wounds."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1ca"
+  },
+  "nameId": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+  "name": "Grape Leaf blight (Isariopsis Leaf Spot)",
+  "description": "Leaf blight causes brown spots leading to reduced grape leaf health.",
+  "cure": "Apply fungicides and improve vineyard hygiene."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1cb"
+  },
+  "nameId": "Grape___healthy",
+  "name": "Grape healthy",
+  "description": "The grapevine is healthy and free from major diseases.",
+  "cure": "Maintain pruning, watering, and disease monitoring."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1cc"
+  },
+  "nameId": "Orange___Haunglongbing_(Citrus_greening)",
+  "name": "Orange Haunglongbing (Citrus greening)",
+  "description": "Citrus greening causes yellow shoots and misshapen fruits, transmitted by psyllids.",
+  "cure": "Control psyllids and remove infected trees promptly."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1cd"
+  },
+  "nameId": "Peach___Bacterial_spot",
+  "name": "Peach Bacterial spot",
+  "description": "Bacterial spot causes dark lesions on peach leaves and fruit.",
+  "cure": "Use copper bactericides and plant resistant varieties."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1ce"
+  },
+  "nameId": "Peach___healthy",
+  "name": "Peach healthy",
+  "description": "The peach plant is healthy and thriving without disease symptoms.",
+  "cure": "Practice regular orchard management and pest monitoring."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1cf"
+  },
+  "nameId": "Pepper,_bell___Bacterial_spot",
+  "name": "Bell Pepper Bacterial spot",
+  "description": "Bacterial spot causes dark, wet lesions on bell pepper leaves and fruits.",
+  "cure": "Use copper sprays and avoid overhead irrigation."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1d0"
+  },
+  "nameId": "Pepper,_bell___healthy",
+  "name": "Bell Pepper healthy",
+  "description": "The bell pepper plant is healthy and producing strong fruit growth.",
+  "cure": "Provide good nutrition, watering, and pest prevention."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1d1"
+  },
+  "nameId": "Potato___Early_blight",
+  "name": "Potato Early blight",
+  "description": "Early blight causes concentric dark spots on potato leaves and stems.",
+  "cure": "Apply fungicides early and remove plant debris."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1d2"
+  },
+  "nameId": "Potato___Late_blight",
+  "name": "Potato Late blight",
+  "description": "Late blight leads to water-soaked lesions and rotting potatoes.",
+  "cure": "Destroy infected plants and use fungicides promptly."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1d3"
+  },
+  "nameId": "Potato___healthy",
+  "name": "Potato healthy",
+  "description": "The potato plant is healthy with no sign of blight or pest damage.",
+  "cure": "Maintain healthy soil and monitor regularly for early signs."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1d4"
+  },
+  "nameId": "Raspberry___healthy",
+  "name": "Raspberry healthy",
+  "description": "The raspberry plant is healthy with vigorous leaf and fruit growth.",
+  "cure": "Ensure regular watering, pruning, and pest prevention."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1d5"
+  },
+  "nameId": "Soybean___healthy",
+  "name": "Soybean healthy",
+  "description": "The soybean plant is healthy and disease-free.",
+  "cure": "Maintain proper irrigation, fertilization, and field sanitation."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1d6"
+  },
+  "nameId": "Squash___Powdery_mildew",
+  "name": "Squash Powdery mildew",
+  "description": "Powdery mildew causes a white coating on squash leaves and stems.",
+  "cure": "Spray with neem oil or sulfur-based fungicides."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1d7"
+  },
+  "nameId": "Strawberry___Leaf_scorch",
+  "name": "Strawberry Leaf scorch",
+  "description": "Leaf scorch causes dark brown spots and drying of strawberry leaves.",
+  "cure": "Remove infected leaves and apply fungicides."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1d8"
+  },
+  "nameId": "Strawberry___healthy",
+  "name": "Strawberry healthy",
+  "description": "The strawberry plant is healthy with vibrant, disease-free growth.",
+  "cure": "Ensure good watering, fertilization, and pest control."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1d9"
+  },
+  "nameId": "Tomato___Bacterial_spot",
+  "name": "Tomato Bacterial spot",
+  "description": "Bacterial spot creates small, dark spots on tomato leaves and fruit.",
+  "cure": "Use copper-based sprays and avoid leaf wetting."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1da"
+  },
+  "nameId": "Tomato___Early_blight",
+  "name": "Tomato Early blight",
+  "description": "Early blight produces dark concentric rings on lower tomato leaves.",
+  "cure": "Apply fungicides and remove infected debris."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1db"
+  },
+  "nameId": "Tomato___Late_blight",
+  "name": "Tomato Late blight",
+  "description": "Late blight causes brown, water-soaked spots on tomato leaves and fruits.",
+  "cure": "Use fungicides and destroy infected plants immediately."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1dc"
+  },
+  "nameId": "Tomato___Leaf_Mold",
+  "name": "Tomato Leaf Mold",
+  "description": "Leaf mold appears as yellow patches and white mold under tomato leaves.",
+  "cure": "Increase air circulation and apply protective fungicides."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1dd"
+  },
+  "nameId": "Tomato___Septoria_leaf_spot",
+  "name": "Tomato Septoria leaf spot",
+  "description": "Septoria leaf spot causes small, circular spots leading to leaf drop in tomatoes.",
+  "cure": "Remove infected leaves and apply fungicides."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1de"
+  },
+  "nameId": "Tomato___Spider_mites Two-spotted_spider_mite",
+  "name": "Tomato Spider mites Two-spotted spider mite",
+  "description": "Two-spotted spider mites cause stippling and leaf drying on tomato plants.",
+  "cure": "Spray miticides or neem oil to reduce mite population."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1df"
+  },
+  "nameId": "Tomato___Target_Spot",
+  "name": "Tomato Target Spot",
+  "description": "Target spot causes brown lesions with light centers on tomato leaves and fruit.",
+  "cure": "Apply fungicides early and maintain good field sanitation."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1e0"
+  },
+  "nameId": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+  "name": "Tomato Yellow Leaf Curl Virus",
+  "description": "Yellow Leaf Curl Virus causes curled, stunted leaves and poor tomato yield.",
+  "cure": "Control whiteflies and remove infected plants."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1e1"
+  },
+  "nameId": "Tomato___Tomato_mosaic_virus",
+  "name": "Tomato Mosaic Virus",
+  "description": "Tomato Mosaic Virus leads to mottled, distorted tomato leaves and poor fruiting.",
+  "cure": "Use virus-free seeds and disinfect tools regularly."
+},
+{
+  "_id": {
+    "$oid": "680e5b670622094d815cc1e2"
+  },
+  "nameId": "Tomato___healthy",
+  "name": "Tomato healthy",
+  "description": "The tomato plant is healthy with strong growth and no disease signs.",
+  "cure": "Continue good watering, fertilization, and pest management."
+}]
